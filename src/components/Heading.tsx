@@ -9,7 +9,7 @@ export default function Heading() {
       >
         A VIDIT KHANDELWAL PROJECT
       </a>
-      <div className="flex flex-col space-y-1 lg:flex-row lg:space-x-1 items-center text-zinc-900 dark:text-zinc-200 text-2xl lg:text-4xl font-medium ">
+      <div className="flex flex-col space-y-1 lg:flex-row lg:space-x-1 items-center text-zinc-900 dark:text-zinc-200 text-2xl lg:text-4xl font-medium">
         
         <h1 className="font-extralight">Top Headlines from </h1>
         <div className="flex flex-row space-x-1 items-center">

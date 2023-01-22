@@ -1,5 +1,4 @@
 import React from "react";
-import {BsDot} from "react-icons/bs"
 import Link from "next/link";
 import { UrlObject } from "url";
 
