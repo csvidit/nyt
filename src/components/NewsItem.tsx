@@ -8,7 +8,7 @@ export default function NewsItem(props: { url: string | UrlObject; title: string
     <div className="flex flex-col space-y-1 justify-center items-center">
       <Link
         href={props.url}
-        className="flex w-full flex-col space-y-1 hover:bg-zinc-700 p-2 rounded-xl col-span-2 font-light h-max"
+        className="flex w-full flex-col space-y-1 hover:bg-zinc-300 dark:hover:bg-zinc-700 p-2 rounded-xl col-span-2 font-light h-max"
       >
         <div className="flex flex-col space-y-1 ">
           <p className="text-md text-zinc-900 dark:text-zinc-200 text-2xl">{props.title}</p>
