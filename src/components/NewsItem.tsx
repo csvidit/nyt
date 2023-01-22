@@ -13,7 +13,7 @@ export default function NewsItem(props: { url: string | UrlObject; title: string
         <div className="flex flex-col space-y-1 ">
           <p className="text-md text-zinc-200 text-2xl">{props.title}</p>
           <p className="text-zinc-400">{props.abstract}</p>
-          <div className="flex h-max flex-row space-x-1 text-slate-300 text-xs items-center ">
+          <div className="flex h-max flex-row space-x-1 text-zinc-300 text-xs font-medium items-center ">
             <p className="">
               {new Date(props.time).toLocaleTimeString("en-IN", {
                 timeStyle: "short",
