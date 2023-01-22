@@ -5,7 +5,7 @@ export default function Heading() {
     <div className="flex flex-col space-y-1 w-4/5 lg:w-3/5 justify-center items-center">
       <div className="flex flex-col space-y-1 lg:flex-row lg:space-x-1 items-center text-zinc-900 dark:text-zinc-200 text-2xl lg:text-4xl font-medium ">
         <h1 className="font-extralight">Top Headlines from </h1>
-        <div className="flex flex-row space-x-1">
+        <div className="flex flex-row space-x-1 items-center">
           <TbBrandNytimes></TbBrandNytimes>
           <h1>The New York Times</h1>
         </div>

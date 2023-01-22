@@ -42,7 +42,7 @@ const News = () => {
     );
   } else {
     return (
-      <div className="w-4/5 lg:w-3/5 h-96 flex-row space-x-1 justify-center text-zinc-900 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-900 items-center overflow-scroll scroll-smooth">
+      <div className="w-4/5 lg:w-3/5 flex flex-row space-x-1 self-center justify-center text-zinc-900 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-900 items-center">
         <p className="text-2xl self-center">Loading</p>
         <Oval
           height={30}
@@ -55,6 +55,7 @@ const News = () => {
           secondaryColor="#0ea5e9"
           strokeWidth={5}
           strokeWidthSecondary={5}
+          className="self-center"
         />
       </div>
     );
