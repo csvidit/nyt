@@ -24,7 +24,7 @@ const News = () => {
 
   let slicedNews = news?.slice(0, 10);
 
-  if (news) {
+  if (slicedNews?.length>0) {
     return (
       <div className="w-4/5 lg:w-3/5 h-96 flex-col space-y-1 justify-center bg-zinc-200 dark:bg-zinc-900 items-center overflow-scroll scroll-smooth">
         {slicedNews?.map((article) => {
@@ -42,8 +42,8 @@ const News = () => {
     );
   } else {
     return (
-      <div className="w-4/5 lg:w-3/5 h-96 flex-row space-x-1 justify-center bg-zinc-200 dark:bg-zinc-900 items-center overflow-scroll scroll-smooth">
-        <p>Loading</p>
+      <div className="w-4/5 lg:w-3/5 h-96 flex-row space-x-1 justify-center text-zinc-900 dark:text-zinc-200 bg-zinc-200 dark:bg-zinc-900 items-center overflow-scroll scroll-smooth">
+        <p className="text-2xl self-center">Loading</p>
         <Oval
           height={30}
           width={30}
