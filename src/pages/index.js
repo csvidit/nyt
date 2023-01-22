@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import { TbBrandNytimes } from "react-icons/tb";
 import { Radio, Oval } from "react-loader-spinner";
 import axios from "axios";
 import NewsItem from "@/components/NewsItem";
+import Heading from "@/components/Heading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +21,7 @@ export default function Home() {
     return axios
       .get(apiUrl)
       .then((response) => response)
-      .then((response) => setNews(response?.results));
+      .then((response) => setNews(response?.data?.results));
   };
 
   useEffect(() => {
@@ -43,11 +43,7 @@ export default function Home() {
         </Head>
         <div className="w-screen h-screen flex flex-col space-y-1 justify-center bg-zinc-200 dark:bg-zinc-900">
           <div className="w-screen h-fit flex flex-col space-y-1 justify-center bg-zinc-200 dark:bg-zinc-900 items-center">
-            <div className="flex flex-row space-x-1 items-center text-zinc-900 dark:text-zinc-200 text-4xl font-medium">
-              <h1 className="font-extralight">Top Headlines from </h1>
-              <TbBrandNytimes></TbBrandNytimes>
-              <h1>The New York Times</h1>
-            </div>
+            <Heading></Heading>
             <a
               className="text-zinc-400 dark:text-zinc-700 text-xs font-extralight hover:text-zinc-700 dark:hover:text-zinc-400"
               href="https://github.com/csvidit/nyt"
@@ -56,12 +52,13 @@ export default function Home() {
             </a>
             <div className="w-1/2 border-b border-b-zinc-400 dark:border-b-zinc-700"></div>
             {slicedNews?.map((article) => {
-              return <NewsItem key={article?.uri}>{article?.title}</NewsItem>;
+              return <NewsItem url={article?.url} key={article?.uri} title={article?.title} abstract={article?.abstract} time={article?.updated_date}></NewsItem>;
             })}
           </div>
         </div>
       </>
     );
+
   } else {
     return (
       <>
@@ -88,16 +85,6 @@ export default function Home() {
                 strokeWidthSecondary={5}
               />
             </div>
-            <a
-              className="text-zinc-400 dark:text-zinc-700 text-xs font-extralight hover:text-zinc-700 dark:hover:text-zinc-400"
-              href="https://github.com/csvidit/nyt"
-            >
-              A VIDIT KHANDELWAL PROJECT
-            </a>
-            <div className="w-1/2 border-b border-b-zinc-400 dark:border-b-zinc-700"></div>
-            {slicedNews?.map((article) => {
-              return <NewsItem key={article?.uri}>{article?.title}</NewsItem>;
-            })}
           </div>
         </div>
       </>
