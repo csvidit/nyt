@@ -1,6 +1,11 @@
 import { TbBrandNytimes } from "react-icons/tb";
+import {useScroll, motion} from "framer-motion"
+import {useRef} from "react"
+import containerRef from "./News"
 
 export default function Heading() {
+
+
   return (
     <div className="flex flex-col space-y-1 w-4/5 lg:w-3/5 justify-center items-center">
       <a
@@ -13,13 +18,12 @@ export default function Heading() {
         
         <h1 className="font-extralight">Top Headlines from </h1>
         <div className="flex flex-row space-x-1 items-center">
-          <TbBrandNytimes></TbBrandNytimes>
+          <div className="self-center"><TbBrandNytimes></TbBrandNytimes></div>
           <h1>The New York Times</h1>
         </div>
       </div>
       
       <p className="text-zinc-700 dark:text-zinc-400 text-xs font-extralight">(SCROLL FOR MORE)</p>
-      <div className="w-full border-b border-b-zinc-400 dark:border-b-zinc-700"></div>
     </div>
   );
 }

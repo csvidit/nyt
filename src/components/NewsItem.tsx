@@ -24,7 +24,7 @@ export default function NewsItem(props: {
 
   return (
     <motion.div
-      className="flex flex-col space-y-1 justify-center items-center"
+      className="flex flex-col space-y-1 justify-center items-center w-full"
       variants={mainVariants}
       whileInView="focus"
       initial="initial"
