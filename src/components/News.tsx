@@ -22,11 +22,7 @@ const News = (props: {
 
   return (
     <div className="w-4/5 lg:w-3/5 h-96 flex flex-col items-center relative">
-      <motion.div
-        style={{ scaleX: scrollYProgress }}
-        className="mb-2 absolute top-0 left-0 right-0 w-max-full h-2 bg-zinc-400 dark:bg-zinc-600"
-      ></motion.div>
-      <div ref={targetRef} className="mt-2 w-100 flex flex-col space-y-1 justify-center bg-zinc-200 dark:bg-zinc-900 items-center overflow-scroll scroll-smooth">
+      <div ref={targetRef} className="mb-2 w-100 flex flex-col space-y-1 justify-center bg-zinc-200 dark:bg-zinc-900 items-center overflow-scroll scroll-smooth">
         {slicedNews?.map(
           (article: {
             url: string | UrlObject;
@@ -49,6 +45,10 @@ const News = (props: {
           }
         )}
       </div>
+      <motion.div
+        style={{ scaleX: scrollYProgress }}
+        className="mt-2 absolute bottom-0 left-0 right-0 w-max-full h-2 bg-zinc-400 dark:bg-zinc-600"
+      ></motion.div>
     </div>
   );
 };
