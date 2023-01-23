@@ -7,7 +7,7 @@ import axios from "axios"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({data}) {
+export default function Home({data}: {data: Object}) {
   return (
     <>
       <Head>
@@ -31,23 +31,6 @@ export async function getServerSideProps()
 {
   const res = await fetch("https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=" +process.env.NEXT_PUBLIC_API_KEY);
   const data = await res.json()
-  // const [news, setNews] = useState([]);
-
-  // const apiUrl =
-  //   "https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=" +
-  //   process.env.NEXT_PUBLIC_API_KEY;
-
-  // const fetchNews = () => {
-  //   return axios
-  //     .get(apiUrl)
-  //     .then((response) => response)
-  //     .then((response) => setNews(response?.data?.results));
-  // };
-
-  // useEffect(() => {
-  //   fetchNews();
-  //   console.log(news);
-  // }, []);
 
   return { props: { data }}
 

@@ -9,10 +9,6 @@ export default function NewsItem(props: {
   abstract: string;
   time: string;
 }) {
-  const [hydrated, setHydrated] = useState(false);
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
 
   const mainVariants = {
     initial: {
@@ -21,7 +17,7 @@ export default function NewsItem(props: {
     focus: {
       opacity: 1,
       transition: {
-        delay: 0.15,
+        delay: 0
       },
     },
   };
