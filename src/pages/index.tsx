@@ -3,10 +3,11 @@ import React, { useState, useEffect } from "react";
 import { Inter } from "@next/font/google";
 import Heading from "@/components/Heading";
 import News from "@/components/News";
+import axios from "axios"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({data}: {data: Object}) {
   return (
     <>
       <Head>
@@ -19,9 +20,18 @@ export default function Home() {
       <div className="w-screen h-screen flex flex-col space-y-1 justify-center bg-zinc-200 dark:bg-zinc-900">
         <div className="w-screen h-fit flex flex-col space-y-1 justify-center bg-zinc-200 dark:bg-zinc-900 items-center">
           <Heading/>
-          <News />
+          <News data={data} />
         </div>
       </div>
     </>
   );
+}
+
+export async function getServerSideProps()
+{
+  const res = await fetch("https://api.nytimes.com/svc/news/v3/content/all/all.json?api-key=" +process.env.NEXT_PUBLIC_API_KEY);
+  const data = await res.json()
+
+  return { props: { data }}
+
 }
