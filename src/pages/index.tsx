@@ -7,7 +7,7 @@ import axios from "axios"
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({data}: {data: Object}) {
+export default function Home({data}: {data: {results: []}}) {
   return (
     <>
       <Head>
